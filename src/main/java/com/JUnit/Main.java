@@ -7,5 +7,6 @@ public class Main {
         UserRegistration userRegistration = new UserRegistration();
         System.out.println(Pattern.matches(userRegistration.firstName, "Akash"));
         System.out.println(Pattern.matches(userRegistration.lastName, "Satla"));
+        System.out.println(Pattern.matches(userRegistration.email, "akash.satla@gmail.co.in"));
     }
 }
