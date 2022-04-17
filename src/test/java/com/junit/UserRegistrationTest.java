@@ -4,7 +4,66 @@ package com.junit;
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 
+import java.util.regex.Pattern;
+
 public class UserRegistrationTest {
+    @Test
+    public void givenFirstNameWhenProperShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = Pattern.matches(userRegistration.firstName, "Akash");
+        Assert.assertEquals(true, result);
+
+    }
+
+    @Test
+    public void givenFirstNameWhenShortShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = Pattern.matches(userRegistration.firstName, "Ak");
+        Assert.assertEquals(false, result);
+    }
+
+    @Test
+    public void givenLastNameWhenProperShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = Pattern.matches(userRegistration.lastName, "Satla");
+        Assert.assertEquals(true, result);
+
+    }
+
+    @Test
+    public void givenLastNameWhenShortShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = Pattern.matches(userRegistration.lastName, "Sa");
+        Assert.assertEquals(false, result);
+    }
+
+    @Test
+    public void givenPhoneNumberWhenProperShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = Pattern.matches(userRegistration.phoneNumber, "91 9676443328");
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPhoneNumberWhenShortShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = Pattern.matches(userRegistration.phoneNumber, "976443328");
+        Assert.assertEquals(false, result);
+    }
+
+    @Test
+    public void givenPasswordWhenProperShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = Pattern.matches(userRegistration.password, "Ajv12@jafvc");
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPasswordWhenShortShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = Pattern.matches(userRegistration.password, "Aakjf1");
+        Assert.assertEquals(false, result);
+    }
     @Test
     public void givenSomeEmailSamplesShoudlClearThemAll() {
         UserRegistration userRegistration = new UserRegistration();
