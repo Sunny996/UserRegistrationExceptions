@@ -1,4 +1,4 @@
-package com.JUnit;
+package com.junit;
 
 public class UserRegistration {
     public String firstName = "^[A-Z][a-z]{2,}$";
