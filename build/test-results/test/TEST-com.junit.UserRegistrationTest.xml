@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.junit.UserRegistrationTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-04-18T15:37:47" hostname="DESKTOP-E72B5JU" time="0.045">
+  <properties/>
+  <testcase name="givenSomeEmailSamplesShoudlClearThemAll()" classname="com.junit.UserRegistrationTest" time="0.031"/>
+  <testcase name="givenFirstNameWhenProperShouldReturnTrue()" classname="com.junit.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenlastNameWhenInvalidShouldReturnTrue()" classname="com.junit.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPasswordWhenProperShouldReturnTrue()" classname="com.junit.UserRegistrationTest" time="0.002"/>
+  <testcase name="givenPhoneNumberWhenInvalidShouldReturnTrue()" classname="com.junit.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenFirstNameWhenInvalidShouldReturnTrue()" classname="com.junit.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenLastNameWhenProperShouldReturnTrue()" classname="com.junit.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPasswordWhenInvalidShouldReturnTrue()" classname="com.junit.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPhoneNumberWhenProperShouldReturnTrue()" classname="com.junit.UserRegistrationTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
