@@ -64,6 +64,7 @@ public class UserRegistrationTest {
         boolean result = Pattern.matches(userRegistration.password, "Aakjf1");
         Assert.assertEquals(false, result);
     }
+
     @Test
     public void givenSomeEmailSamplesShoudlClearThemAll() {
         UserRegistration userRegistration = new UserRegistration();
