@@ -1,42 +1,46 @@
 package com.junit;
 
 import java.util.regex.Pattern;
+@FunctionalInterface
+interface UserInputValidation{
+    boolean validate(String regex, String input);
+}
 
 public class UserRegistration {
+    public static UserInputValidation validation=(regex, input)->{
+        Pattern pattern=Pattern.compile(regex);
+        return pattern.matcher(input).matches();
+    };
 
     public boolean validateEmail(String email) throws UserRegistrationException {
         Pattern pattern = Pattern.compile("^[a-z0-9_+-]+((\\.)[a-z0-9]+)?(\\@)[a-z0-9]+(\\.)[a-z]{2,4}((\\.)[a-z]{2,4})?$");
-        if (!pattern.matcher(email).matches())
+        if (!UserRegistration.validation.validate("^[a-z0-9_+-]+((\\.)[a-z0-9]+)?(\\@)[a-z0-9]+(\\.)[a-z]{2,4}((\\.)[a-z]{2,4})?$",email))
             throw new UserRegistrationException("Invalid Email Address", UserRegistrationException.ExceptionType.INVALID_EMAIL);
-        return pattern.matcher(email).matches();
+        return true;
     }
 
     public boolean validateFirstName(String firstName) throws UserRegistrationException {
-        Pattern pattern = Pattern.compile("^[A-Z][a-z]{2,}$");
-        if (!pattern.matcher(firstName).matches())
+        if (!UserRegistration.validation.validate("^[A-Z][a-z]{2,}$",firstName))
             throw new UserRegistrationException("Invalid First Name", UserRegistrationException.ExceptionType.INVALID_FIRST_NAME);
-        return pattern.matcher(firstName).matches();
+        return true;
     }
 
     public boolean validateLastName(String lastName) throws UserRegistrationException {
-        Pattern pattern = Pattern.compile("^[A-Z][a-z]{2,}$");
-        if (!pattern.matcher(lastName).matches())
+        if (!UserRegistration.validation.validate("^[A-Z][a-z]{2,}$",lastName))
             throw new UserRegistrationException("Invalid Last Name", UserRegistrationException.ExceptionType.INVALID_LAST_NAME);
-        return pattern.matcher(lastName).matches();
+        return true;
     }
 
     public boolean validatePhoneNumber(String phoneNumber) throws UserRegistrationException {
-        Pattern pattern = Pattern.compile("^[1-9][0-9]{0,2} [1-9][0-9]{9}$");
-        if (!pattern.matcher(phoneNumber).matches())
+        if (!UserRegistration.validation.validate("^[1-9][0-9]{0,2} [1-9][0-9]{9}$",phoneNumber))
             throw new UserRegistrationException("Invalid Phone Number", UserRegistrationException.ExceptionType.INVALID_PHONE_NUMBER);
-        return pattern.matcher(phoneNumber).matches();
+        return true;
     }
 
     public boolean validatePassword(String password) throws UserRegistrationException {
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)(?=[a-zA-Z0-9]*[@$#%^&!?][a-zA-Z0-9]*$)[a-zA-Z0-9!@#$^&*]{8,}$");
-        if (!pattern.matcher(password).matches())
+        if (!UserRegistration.validation.validate("^(?=.*[A-Z])(?=.*\\d)(?=[a-zA-Z0-9]*[@$#%^&!?][a-zA-Z0-9]*$)[a-zA-Z0-9!@#$^&*]{8,}$",password))
             throw new UserRegistrationException("Invalid Password", UserRegistrationException.ExceptionType.INVALID_PASSWORD);
-        return pattern.matcher(password).matches();
+        return true;
     }
 
 }
